@@ -224,6 +224,7 @@ div.barra {
 }
 div.logo {
   width:80%;
+  float: left;
 }
 div.logo img {
   width:100%;
@@ -231,7 +232,6 @@ div.logo img {
 @media only screen and (min-width:768px) {
   div.logo  {
     width: 33%;
-    float: left;
   }
 }
 /* navegacion principal */
@@ -245,6 +245,10 @@ nav.navegacion-principal a {
   text-transform: uppercase;
   text-decoration: none;
   transition: all .6s ease;
+  width: 100%;
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
 }
 nav.navegacion-principal a:hover {
   background-color: #fe4918;
@@ -268,9 +272,34 @@ nav.navegacion-principal a:last-child:hover {
     /* line-height: 60px; */
     padding: 10px 10px;
     display: inline-block;
-  }
-  
+    width: auto;
+    text-align: center;
+    margin: 0 10px 0 0;
+  } 
 }
+/* menu movil */
+div.menu-movil {
+  width: 60px;
+  display: block;
+   float: right;
+  text-align: right;
+  margin-top: 12px;
+} 
+div.menu-movil:hover {
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  div.menu-movil {
+    display: none;
+  }
+}
+div.menu-movil span {
+  height: 8px;
+  margin-bottom: 6px;
+  background-color: #ffffff;
+  display: block;
+}
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
