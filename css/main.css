@@ -455,7 +455,16 @@ div.invitado {
 }
 div.invitado img {
   max-width: 100%;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  -webkit-transition: all .5s ease-in-out;
 }
+
+div.invitado:hover img {
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.1);
+} 
+
 div.invitado p {
   position: absolute;
   bottom: 0;
@@ -467,6 +476,11 @@ div.invitado p {
   color: #fe4818;
   text-align: left;
   font-family: 'Oswald', sans-serif;
+  -webkit-transition: all .5s ease-in-out;
+}
+div.invitado:hover p {
+  bottom: -80px;
+  opacity: 0;
 }
 /* ==========================================================================
    Helper classes
