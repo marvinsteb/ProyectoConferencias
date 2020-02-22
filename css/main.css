@@ -493,6 +493,8 @@ div.invitado:hover p {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  -webkit-filter: brightness(.8);
+  filter: brightness(.8);
 }
 
 div.contador {
