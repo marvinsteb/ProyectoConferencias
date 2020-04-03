@@ -149,6 +149,17 @@ h3 {
   background-color: white;
   color: #fe4918;
 }
+.button.transparente {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  /* border-color: #ffffff; */
+}
+
+.button.transparente:hover {
+  border-color: #fe4918;
+}
+
 
 ul{
   list-style: none;
@@ -611,7 +622,7 @@ div.testimonial {
 }
 blockquote {
   background-color: #ffffff;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #fe4918;
   position: relative;
   margin: 0 0 10px 0;
   padding-bottom: 20px;
@@ -632,6 +643,67 @@ blockquote p::before {
   padding: 0;
   line-height: 1;
   color: #fe4918;
+}
+footer.info-testimoniales {
+  padding: 0;
+}
+footer.info-testimoniales  img {
+  float: left;
+  width: 20%;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+footer.info-testimoniales cite {
+  text-align: left;
+  color: #fe4918;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding-top: 20px;
+  width: 66.6%;
+  float: right;
+  font-weight: bold;
+  font-style: normal;
+}
+footer.info-testimoniales cite span {
+  color: #000000;
+  display: block;
+  text-transform: lowercase;
+  margin-top: 5px;
+}
+
+/* newsletter */
+div.newsletter {
+  position: relative;
+  height: auto;
+}
+
+div.newsletter {
+  position: relative;
+  height: auto;
+}
+
+div.newsletter::before {
+  background-image: url(../img/bg-resumen.jpg)!important;
+  content: '';
+}
+
+div.newsletter .contenido {
+  padding: 100px 0;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+div.newsletter .contenido p {
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
+
+div.newsletter .contenido h3 {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 7vw;
+  font-family: 'PT Sans',sans-serif;
 }
 /* ==========================================================================
    Helper classes
