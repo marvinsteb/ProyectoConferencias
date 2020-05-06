@@ -101,13 +101,15 @@ html {
   box-sizing: border-box;
 }
 
-*,*::before,*::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
   background: #f2f2f2;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 /* estilos globales */
 .seccion {
@@ -115,10 +117,10 @@ body {
 }
 .seccion p {
   font-size: 1.4em;
-  text-align: center; 
+  text-align: center;
 }
 h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 2.4em;
   text-transform: uppercase;
   text-align: center;
@@ -126,7 +128,7 @@ h2 {
 h3 {
   font-size: 1.8em;
   color: #fe4918;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   margin: 0;
 }
 
@@ -135,13 +137,13 @@ h3 {
   padding: 10px 40px;
   color: #ffffff;
   text-transform: uppercase;
-  font-weight: bold; 
-  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
   text-decoration: none;
   font-size: 1em;
   margin-top: 20px;
   display: inline-block;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
   border: 2px solid #fe4918;
 }
 .button.hollow,
@@ -160,8 +162,7 @@ h3 {
   border-color: #fe4918;
 }
 
-
-ul{
+ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -174,7 +175,7 @@ ul{
 }
 
 h2::after {
-  content: '';
+  content: "";
   margin: 0 auto;
   background-image: url(../img/separador.png);
   height: 30px;
@@ -213,7 +214,7 @@ div.contenido-header {
   padding-top: 40px;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and (min-width: 768px) {
   div.contenio-hearder {
     padding-top: 10px;
   }
@@ -231,7 +232,7 @@ nav.redes-sociales a:last-child {
   margin-right: 0;
 }
 
-@media only screen and ( min-width: 768px ) {
+@media only screen and (min-width: 768px) {
   div.informacion-evento {
     width: 70%;
     margin: 0 auto;
@@ -266,7 +267,7 @@ p.ciudad {
 }
 
 p.slogan {
-  text-transform: none!important;
+  text-transform: none !important;
 }
 
 p.slogan span {
@@ -275,10 +276,10 @@ p.slogan span {
 
 h1.nombre-sitio {
   font-size: 5.9vw;
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   text-transform: uppercase;
 }
-@media only screen and ( min-width: 768px ) {
+@media only screen and (min-width: 768px) {
   h1.nombre-sitio {
     font-size: 5.9vw;
     margin: 0;
@@ -288,17 +289,17 @@ h1.nombre-sitio {
 /* barra de navegacion */
 div.barra {
   background-color: #353535;
-  padding: 20px 0 ;
+  padding: 20px 0;
 }
 div.logo {
-  width:80%;
+  width: 80%;
   float: left;
 }
 div.logo img {
-  width:100%;
+  width: 100%;
 }
-@media only screen and (min-width:768px) {
-  div.logo  {
+@media only screen and (min-width: 768px) {
+  div.logo {
     width: 33%;
   }
 }
@@ -307,12 +308,12 @@ nav.navegacion-principal {
   display: none;
 }
 nav.navegacion-principal a {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   color: #ffffff;
   font-size: 1.3em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
   width: 100%;
   display: block;
   text-align: center;
@@ -328,7 +329,7 @@ nav.navegacion-principal a:last-child {
 nav.navegacion-principal a:last-child:hover {
   color: #ffffff;
 }
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   nav.navegacion-principal {
     width: 67%;
     float: right;
@@ -343,16 +344,16 @@ nav.navegacion-principal a:last-child:hover {
     width: auto;
     text-align: center;
     margin: 0 10px 0 0;
-  } 
+  }
 }
 /* menu movil */
 div.menu-movil {
   width: 60px;
   display: block;
-   float: right;
+  float: right;
   text-align: right;
   margin-top: 12px;
-} 
+}
 div.menu-movil:hover {
   cursor: pointer;
 }
@@ -385,14 +386,14 @@ div.contenido-programa {
   width: 100%;
 }
 div.programa-evento {
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 15px;
   margin-top: 80px;
 }
 @media only screen and (min-width: 768px) {
   div.programa-evento {
     width: 70%;
-  }  
+  }
 }
 
 @media only screen and (min-width: 992px) {
@@ -417,7 +418,7 @@ nav.menu-programa a {
   text-align: center;
   color: #000000;
   text-decoration: none;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-bottom: 10px;
   font-size: 1.2em;
 }
@@ -429,7 +430,7 @@ nav.menu-programa a {
 }
 
 nav.menu-programa a i,
-div.detalle-evento p  i {
+div.detalle-evento p i {
   color: #fe4918;
   font-size: 1.6em;
   margin-right: 10px;
@@ -456,16 +457,16 @@ ul.lista-invitados li {
   float: left;
 }
 
-@media only screen and (min-width: 480px ) {
+@media only screen and (min-width: 480px) {
   ul.lista-invitados li {
     width: 50%;
-  } 
+  }
 }
 
-@media only screen and (min-width: 768px ) {
+@media only screen and (min-width: 768px) {
   ul.lista-invitados li {
     width: 33.3%;
-  } 
+  }
 }
 div.invitado {
   position: relative;
@@ -475,13 +476,13 @@ div.invitado img {
   max-width: 100%;
   filter: gray;
   -webkit-filter: grayscale(1);
-  -webkit-transition: all .5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
 }
 
 div.invitado:hover img {
   -webkit-filter: grayscale(0);
   -webkit-transform: scale(1.1);
-} 
+}
 
 div.invitado p {
   position: absolute;
@@ -489,12 +490,12 @@ div.invitado p {
   left: 0;
   padding: 15px 10px;
   margin: 0;
-  background-color: rgba(0, 0, 0, .55);
+  background-color: rgba(0, 0, 0, 0.55);
   width: 100%;
   color: #fe4918;
   text-align: left;
-  font-family: 'Oswald', sans-serif;
-  -webkit-transition: all .5s ease-in-out;
+  font-family: "Oswald", sans-serif;
+  -webkit-transition: all 0.5s ease-in-out;
 }
 div.invitado:hover p {
   bottom: -80px;
@@ -511,8 +512,8 @@ div.invitado:hover p {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
-  -webkit-filter: brightness(.8);
-  filter: brightness(.8);
+  -webkit-filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 
 div.contador {
@@ -522,7 +523,7 @@ div.contador {
 
 div.contador::before {
   background-image: url(../img/bg-resumen.jpg);
-  content: '';
+  content: "";
 }
 
 ul.resumen-evento {
@@ -535,12 +536,12 @@ ul.resumen-evento li {
   float: left;
   text-align: center;
   color: #ffffff;
-  text-transform: uppercase;  
-  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
   font-size: 24px;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   ul.resumen-evento li {
     width: 25%;
   }
@@ -550,14 +551,14 @@ p.numero {
   font-size: 4em;
   display: block;
   margin: 0 0 10px 0;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 /* tablas de precios */
 ul.lista-precios > li {
   padding: 10px;
 }
 
-@media only screen and (min-width:768px) {
+@media only screen and (min-width: 768px) {
   ul.lista-precios > li {
     float: left;
     width: 33.3%;
@@ -571,12 +572,12 @@ div.tabla-precio {
 }
 div.tabla-precio:hover {
   transform: scale(1.1);
-  border: 1px solid #fe4918; 
+  border: 1px solid #fe4918;
   box-shadow: 0px 0px 50px #666;
-  transition: all .3s ease; 
+  transition: all 0.3s ease;
 }
 div.tabla-precio ul li {
-  font-family: 'PT Sans', sans-serif;
+  font-family: "PT Sans", sans-serif;
   font-size: 14px;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -584,18 +585,18 @@ div.tabla-precio ul li {
   line-height: 26px;
 }
 div.tabla-precio ul li::before {
-  font-family: 'FontAwesome';
+  font-family: "FontAwesome";
   display: inline-block;
   vertical-align: top;
   padding: 0 5px;
   font-size: 20px;
   color: green;
   -webkit-font-smoothing: antialiased;
-  content: '\f00c';
+  content: "\f00c";
 }
 
 div.tabla-precios h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 16px;
   text-transform: uppercase;
 }
@@ -612,7 +613,7 @@ div.testimoniales {
   padding-bottom: 20px;
 }
 div.testimonial {
-  padding: 5px; 
+  padding: 5px;
 }
 @media only screen and (min-width: 768px) {
   div.testimonial {
@@ -628,13 +629,13 @@ blockquote {
   padding-bottom: 20px;
 }
 blockquote p {
-  text-align: justify!important;
-  font-size: 1em!important;
-  font-family: 'PT Sans', sans-serif;
+  text-align: justify !important;
+  font-size: 1em !important;
+  font-family: "PT Sans", sans-serif;
   padding: 0 20px 0 65px;
 }
 blockquote p::before {
-  content: '\201c';
+  content: "\201c";
   position: absolute;
   left: 13px;
   top: 8px;
@@ -646,8 +647,9 @@ blockquote p::before {
 }
 footer.info-testimoniales {
   padding: 0;
+  background-color: transparent;
 }
-footer.info-testimoniales  img {
+footer.info-testimoniales img {
   float: left;
   width: 20%;
   border-radius: 50%;
@@ -683,8 +685,8 @@ div.newsletter {
 }
 
 div.newsletter::before {
-  background-image: url(../img/bg-resumen.jpg)!important;
-  content: '';
+  background-image: url(../img/bg-resumen.jpg) !important;
+  content: "";
 }
 
 div.newsletter .contenido {
@@ -703,23 +705,22 @@ div.newsletter .contenido h3 {
   color: #ffffff;
   text-transform: uppercase;
   font-size: 7vw;
-  font-family: 'PT Sans',sans-serif;
+  font-family: "PT Sans", sans-serif;
 }
 /* cuenta regresiva */
 div.cuenta-regresiva ul li {
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 1.6rem;
   text-align: center;
 }
 
-@media only screen and  (min-width:768px){
+@media only screen and (min-width: 768px) {
   div.cuenta-regresiva ul li {
     width: 25%;
     float: left;
   }
 }
-
 
 /* footer */
 footer {
@@ -733,9 +734,8 @@ footer .contenedor > div {
   padding: 0 20px;
   font-size: 1 em;
   text-align: justify;
-
 }
-@media only screen and ( min-width:768px) {
+@media only screen and (min-width: 768px) {
   footer .contenedor > div {
     width: 33.3%;
     float: left;
@@ -744,7 +744,7 @@ footer .contenedor > div {
 footer h3 {
   color: #ffffff;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   margin-bottom: 20px;
 }
 footer h3 span {
@@ -930,4 +930,3 @@ p.copyrigth {
     page-break-after: avoid;
   }
 }
-
