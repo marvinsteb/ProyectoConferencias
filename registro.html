@@ -496,9 +496,55 @@
                 />
               </div>
               <!--.orden  -->
+              <div class="orden">
+                <label for="etiquetas"
+                  >Paquete de 10 etiquetas $2
+                  <small>(HTML5, CSS3, JavaScript )</small></label
+                >
+                <input
+                  type="number"
+                  min="0"
+                  id="etiquetas"
+                  size="3"
+                  placeholder="0"
+                />
+              </div>
+              <!--.orden -->
+              <div class="orden">
+                <label for="regalo">Sleccione un regalo</label>
+                <select name="regalo" id="regalo" required>
+                  <option value="">-Seleccione un regalo-</option>
+                  <option value="ETI">Etiquetas</option>
+                  <option value="PUL">Pulceras</option>
+                  <option value="PLU">Plumas</option>
+                </select>
+              </div>
+              <!-- .orden -->
+              <input
+                type="button"
+                id="calcular"
+                class="button"
+                value="Calcular"
+              />
             </div>
+            <!-- .extras -->
+            <div class="total">
+              <p>Resumen:</p>
+              <div id="lista_productos"></div>
+              <p>Total:</p>
+              <div id="suma_total"></div>
+              <input
+                id="btnRegistro"
+                type="submit"
+                class="button"
+                value="Pagar"
+              />
+            </div>
+            <!-- .total -->
           </div>
+          <!-- .caja -->
         </div>
+        <!-- .resumen -->
       </form>
     </section>
     <footer class="site-footer">
