@@ -19,14 +19,26 @@
     var resultado = document.getElementById("lista_productos");
     var regalo = document.getElementById("regalo");
 
+    // extras
+    var etiquetas = document.getElementById("etiquetas");
+    var camisas = document.getElementById("camisa_evento");
+
     botonCalcular.addEventListener("click", function (event) {
       event.preventDefault();
       if (regalo.value != "") {
         var boletoDia = pase_dia.value,
           boleto2dias = pase_dosdias.value,
-          boletocompleto = pase_completo.value;
-        var total = boletoDia * 30 + boleto2dias * 45 + boleto2dias * 50;
-        console.log(total);
+          boletocompleto = pase_completo.value,
+          cantidadCamisas = camisas.value,
+          cantidadEtiquetas = etiquetas.value;
+
+        var totalPagar =
+          boletoDia * 30 +
+          boleto2dias * 45 +
+          boletocompleto * 50 +
+          cantidadCamisas * 10 * 0.93 +
+          cantidadEtiquetas * 2;
+        console.log(totalPagar);
       } else {
         alert("Debes elegir un regalo");
         regalo.focus();
