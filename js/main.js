@@ -26,11 +26,11 @@
     botonCalcular.addEventListener("click", function (event) {
       event.preventDefault();
       if (regalo.value != "") {
-        var boletoDia = pase_dia.value,
-          boleto2dias = pase_dosdias.value,
-          boletocompleto = pase_completo.value,
-          cantidadCamisas = camisas.value,
-          cantidadEtiquetas = etiquetas.value;
+        var boletoDia = parseInt(pase_dia.value, 10) || 0,
+          boleto2dias = paseInt(pase_dosdias.value, 10) || 0,
+          boletocompleto = parseInt(pase_completo.value, 10) || 0,
+          cantidadCamisas = parseInt(camisas.value, 10) || 0,
+          cantidadEtiquetas = parseInt(etiquetas.value, 10) || 0;
 
         var totalPagar =
           boletoDia * 30 +
