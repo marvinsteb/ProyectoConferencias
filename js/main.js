@@ -2,6 +2,19 @@
   "use strict";
   document.addEventListener("DOMContentLoaded", function () {
     console.log("Esperando a que la pagina cargue completamente ");
+    // mapa
+    var map = L.map("mapa").setView([14.624116, -90.534897], 13);
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    L.marker([14.624116, -90.534897])
+      .addTo(map)
+      .bindPopup("Proyecto Conferencias <br> Boletos disponibles")
+      .openPopup();
+
     // campos datos usuario
     var nombre = document.getElementById("nombre");
     var apellido = document.getElementById("apellido");
@@ -23,6 +36,7 @@
     // extras
     var etiquetas = document.getElementById("etiquetas");
     var camisas = document.getElementById("camisa_evento");
+
     function validarCampos() {
       if (this.value === "") {
         errorDiv.style.display = "block";
@@ -37,6 +51,17 @@
     nombre.addEventListener("blur", validarCampos);
     apellido.addEventListener("blur", validarCampos);
     email.addEventListener("blur", validarCampos);
+    email.addEventListener("blur", function () {
+      if (this.value.indexOf("@") > -1) {
+        errorDiv.style.display = "none";
+        this.style.border = "1px solid #cccccc";
+      } else {
+        errorDiv.style.display = "block";
+        errorDiv.innerHTML = "El email es incorrecto";
+        errorDiv.style.border = "1px solid red";
+        this.style.border = "1px solid red";
+      }
+    });
 
     function mostrarDias() {
       var boletoDia = parseInt(pase_dia.value, 10) || 0,
