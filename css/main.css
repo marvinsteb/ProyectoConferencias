@@ -847,6 +847,16 @@ div.paquete .tabla-precio input {
   color: #fe4918;
   font-weight: bold;
 }
+#lista_productos {
+  background-color: #e1e1e1;
+  padding: 20px;
+  display: none;
+}
+#suma_total {
+  text-align: center;
+  font-size: 2em;
+  color: #fe4918;
+}
 /* Resumen Registro */
 /* ========================================================================== Helper classes ========================================================================== */ /* * Hide visually and from screen readers */
 .hidden {

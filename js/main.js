@@ -57,6 +57,8 @@
         if (cantidadEtiquetas > 0) {
           listadoProductos.push(cantidadEtiquetas + " Etiquetas");
         }
+        listaProductosHtml.style.display = "block";
+        listaProductosHtml.innerHTML = "";
         for (let index = 0; index < listadoProductos.length; index++) {
           listaProductosHtml.innerHTML += listadoProductos[index] + "<br/>";
         }
