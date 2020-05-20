@@ -23,6 +23,21 @@
     // extras
     var etiquetas = document.getElementById("etiquetas");
     var camisas = document.getElementById("camisa_evento");
+    function validarCampos() {
+      if (this.value === "") {
+        errorDiv.style.display = "block";
+        errorDiv.innerHTML = "Este campo es obligatorio";
+        errorDiv.style.border = "1px solid red";
+        this.style.border = "1px solid red";
+      } else {
+        errorDiv.style.display = "none";
+        this.style.border = "initial";
+      }
+    }
+    nombre.addEventListener("blur", validarCampos);
+    apellido.addEventListener("blur", validarCampos);
+    email.addEventListener("blur", validarCampos);
+
     function mostrarDias() {
       var boletoDia = parseInt(pase_dia.value, 10) || 0,
         boleto2dias = parseInt(pase_dosdias.value, 10) || 0,
