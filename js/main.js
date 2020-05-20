@@ -18,6 +18,7 @@
     var botonRegistro = document.getElementById("btnRegistro");
     var listaProductosHtml = document.getElementById("lista_productos");
     var regalo = document.getElementById("regalo");
+    var sumaTotal = document.getElementById("suma_total");
 
     // extras
     var etiquetas = document.getElementById("etiquetas");
@@ -58,8 +59,8 @@
         }
         for (let index = 0; index < listadoProductos.length; index++) {
           listaProductosHtml.innerHTML += listadoProductos[index] + "<br/>";
-          // listadoProductos[index];
         }
+        sumaTotal.innerHTML = `$ ${totalPagar.toFixed(2)}`;
       } else {
         alert("Debes elegir un regalo");
         regalo.focus();
