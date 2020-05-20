@@ -23,6 +23,28 @@
     // extras
     var etiquetas = document.getElementById("etiquetas");
     var camisas = document.getElementById("camisa_evento");
+    function mostrarDias() {
+      var boletoDia = parseInt(pase_dia.value, 10) || 0,
+        boleto2dias = parseInt(pase_dosdias.value, 10) || 0,
+        boletocompleto = parseInt(pase_completo.value, 10) || 0;
+
+      var diasElegidos = [];
+      if (boletoDia >= 1) {
+        diasElegidos.push("viernes");
+      }
+      if (boleto2dias >= 1) {
+        diasElegidos.push("viernes", "sabado");
+      }
+      if (boletocompleto >= 1) {
+        diasElegidos.push("viernes", "sabado", "domingo");
+      }
+      for (let index = 0; index < diasElegidos.length; index++) {
+        document.getElementById(diasElegidos[index]).style.display = "block";
+      }
+    }
+    pase_dia.addEventListener("blur", mostrarDias);
+    pase_dosdias.addEventListener("blur", mostrarDias);
+    pase_completo.addEventListener("blur", mostrarDias);
 
     botonCalcular.addEventListener("click", function (event) {
       event.preventDefault();
