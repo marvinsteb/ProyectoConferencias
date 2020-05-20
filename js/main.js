@@ -31,7 +31,7 @@
         this.style.border = "1px solid red";
       } else {
         errorDiv.style.display = "none";
-        this.style.border = "initial";
+        this.style.border = "1px solid #cccccc";
       }
     }
     nombre.addEventListener("blur", validarCampos);

@@ -861,6 +861,11 @@ div.paquete .tabla-precio input {
 
 #error {
   clear: both;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #ff0000;
+  display: none;
 }
 /* ========================================================================== Helper classes ========================================================================== */ /* * Hide visually and from screen readers */
 .hidden {
