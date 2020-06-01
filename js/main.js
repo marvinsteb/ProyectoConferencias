@@ -131,5 +131,20 @@
         }
       });
     }
+    //menu programa del evento
+
+    $("div.ocultar").hide();
+    $(".programa-evento .info-curso:first").show();
+    $(".menu-programa a:first").addClass("activo");
+
+    $(".menu-programa a").on("click", function () {
+      $("div.ocultar").hide();
+      $(".menu-programa a").removeClass("activo");
+      $(this).addClass("activo");
+      var enlacePrecionado = $(this).attr("href");
+      console.log(enlacePrecionado);
+      $(enlacePrecionado).fadeIn(1000);
+      return false;
+    });
   }); // dom content loaded
 })();
