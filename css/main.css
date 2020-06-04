@@ -322,7 +322,7 @@ nav.navegacion-principal a {
 nav.navegacion-principal a:hover {
   background-color: #fe4918;
 }
-nav.navegacion-principal a:last-child {
+nav.navegacion-principal a.activo {
   border: 2px solid #fe4918;
   color: #fe4918;
 }
