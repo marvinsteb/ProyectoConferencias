@@ -781,6 +781,16 @@ p.copyrigth {
   text-align: center;
 }
 /* INTERNAS*/
+/* Conferencia.html */
+div.galeria a {
+  background-color: red;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+div.galeria {
+  text-align: center;
+}
+
 /* Registro */
 form.registro h3 {
   text-align: center;
