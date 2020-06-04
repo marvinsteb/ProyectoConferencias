@@ -2,6 +2,20 @@
   "use strict";
   document.addEventListener("DOMContentLoaded", function () {
     console.log("Esperando a que la pagina cargue completamente ");
+    // fixed top menu
+    var alturaVentana = $(window).height();
+    var alturaBarra = $(".barra").innerHeight();
+    $(window).scroll(function () {
+      var scroll = $(this).scrollTop();
+      if (scroll > alturaVentana) {
+        $(".barra").addClass("fixedTop");
+        $("body").css({ "margin-top": alturaBarra + "px" });
+      } else {
+        $(".barra").removeClass("fixedTop");
+        $("body").css({ "margin-top": "0px" });
+      }
+    });
+
     // mapa
     var map = L.map("mapa").setView([14.624116, -90.534897], 13);
 
