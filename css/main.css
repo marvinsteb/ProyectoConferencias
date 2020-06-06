@@ -327,6 +327,7 @@ nav.navegacion-principal a {
   display: block;
   text-align: center;
   margin-bottom: 20px;
+  clear: both;
 }
 nav.navegacion-principal a:hover {
   background-color: #fe4918;
@@ -361,7 +362,7 @@ div.menu-movil {
   display: block;
   float: right;
   text-align: right;
-  margin-top: 3px;
+  margin-top: 12px;
 }
 div.menu-movil:hover {
   cursor: pointer;
