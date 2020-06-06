@@ -15,7 +15,10 @@
         $("body").css({ "margin-top": "0px" });
       }
     });
-
+    // menu para dispositivo movil
+    $(".menu-movil").on("click", function () {
+      $(".navegacion-principal").slideToggle();
+    });
     // mapa
     var map = L.map("mapa").setView([14.624116, -90.534897], 13);
 

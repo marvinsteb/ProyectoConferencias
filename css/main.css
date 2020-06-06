@@ -313,7 +313,9 @@ div.logo img {
 /* navegacion principal */
 nav.navegacion-principal {
   display: none;
+  width: 100%;
 }
+
 nav.navegacion-principal a {
   font-family: "Oswald", sans-serif;
   color: #ffffff;
@@ -359,7 +361,7 @@ div.menu-movil {
   display: block;
   float: right;
   text-align: right;
-  margin-top: 12px;
+  margin-top: 3px;
 }
 div.menu-movil:hover {
   cursor: pointer;
