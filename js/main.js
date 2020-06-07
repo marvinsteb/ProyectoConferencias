@@ -20,17 +20,20 @@
       $(".navegacion-principal").slideToggle();
     });
     // mapa
-    var map = L.map("mapa").setView([14.624116, -90.534897], 13);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    }).addTo(map);
+    if ($(".mapa").length > 0) {
+      var map = L.map("mapa").setView([14.624116, -90.534897], 13);
 
-    L.marker([14.624116, -90.534897])
-      .addTo(map)
-      .bindPopup("Proyecto Conferencias <br> Boletos disponibles")
-      .openPopup();
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+
+      L.marker([14.624116, -90.534897])
+        .addTo(map)
+        .bindPopup("Proyecto Conferencias <br> Boletos disponibles")
+        .openPopup();
+    }
 
     // campos datos usuario
     var nombre = document.getElementById("nombre");
@@ -194,11 +197,13 @@
     }
 
     // Cuenta Regresiva
-    $(".cuenta-regresiva").countdown("2020/09/16", function (event) {
-      $("#dias").html(event.strftime("%D"));
-      $("#horas").html(event.strftime("%H"));
-      $("#minutos").html(event.strftime("%M"));
-      $("#segundos").html(event.strftime("%S"));
-    });
+    if ($(".cuenta-regresiva").length > 0) {
+      $(".cuenta-regresiva").countdown("2020/09/16", function (event) {
+        $("#dias").html(event.strftime("%D"));
+        $("#horas").html(event.strftime("%H"));
+        $("#minutos").html(event.strftime("%M"));
+        $("#segundos").html(event.strftime("%S"));
+      });
+    }
   }); // dom content loaded
 })();
