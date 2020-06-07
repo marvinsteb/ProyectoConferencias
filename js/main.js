@@ -165,15 +165,33 @@
     });
 
     // animaciones para los numeros
-    $(".resumen-evento").on("mouseenter", function () {
-      $(".resumen-evento li:nth-child(1) p").animateNumber({ number: 6 }, 1000);
-      $(".resumen-evento li:nth-child(2) p").animateNumber(
-        { number: 15 },
-        1000
+    var resumenEvento = $(".resumen-evento");
+    if (resumenEvento.length > 0) {
+      console.log("existe");
+      $(".resumen-evento").waypoint(
+        function () {
+          $(".resumen-evento li:nth-child(1) p").animateNumber(
+            { number: 6 },
+            1000
+          );
+          $(".resumen-evento li:nth-child(2) p").animateNumber(
+            { number: 15 },
+            1000
+          );
+          $(".resumen-evento li:nth-child(3) p").animateNumber(
+            { number: 3 },
+            1000
+          );
+          $(".resumen-evento li:nth-child(4) p").animateNumber(
+            { number: 9 },
+            1000
+          );
+        },
+        {
+          offset: "60%",
+        }
       );
-      $(".resumen-evento li:nth-child(3) p").animateNumber({ number: 3 }, 1000);
-      $(".resumen-evento li:nth-child(4) p").animateNumber({ number: 9 }, 1000);
-    });
+    }
 
     // Cuenta Regresiva
     $(".cuenta-regresiva").countdown("2020/09/16", function (event) {
