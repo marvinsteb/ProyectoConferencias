@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap"
       rel="stylesheet"
@@ -25,7 +26,7 @@
     <meta name="theme-color" content="#fafafa" />
   </head>
 
-  <body>
+  <body class="conferencia">
     <!--[if IE]>
       <p class="browserupgrade">
         You are using an <strong>outdated</strong> browser. Please
