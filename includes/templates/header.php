@@ -68,7 +68,9 @@
     <div class="barra">
       <div class="contenedor clearfix">
         <div class="logo">
+          <a href="index.php">
           <img src="img/logo.svg" alt="Logo Conferencias" />
+          </a>
         </div>
         <div class="menu-movil">
           <span></span>
