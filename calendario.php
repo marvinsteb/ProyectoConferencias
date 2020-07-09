@@ -21,12 +21,16 @@
 
       <div class="calendario">
         <?php
-        echo $sqlQuery;
+          $eventos = $datos->fetch_assoc();
         ?>
+        <pre>
+          <?php var_dump($eventos);?>
+        </pre>
       </div>
     </section>
     <!--section-->
 
 <?php
+  $conexion->close();
   include_once 'includes/templates/footer.php'
 ?>
