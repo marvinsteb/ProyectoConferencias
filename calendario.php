@@ -27,7 +27,8 @@
         <?php
         $calendario = array();
         while($eventos = $datos->fetch_assoc()) {
-          $calendario[] = array(
+          $fecha = $eventos['fecha_evento'];
+          $calendario [$fecha] [] = array(
             'titulo' => $eventos['nombre_evento'],
             'fecha' => $eventos['fecha_evento'],
             'hora' => $eventos['hora_evento'],
