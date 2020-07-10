@@ -25,14 +25,23 @@
 
       <div class="calendario">
         <?php
+        $calendario = array();
         while($eventos = $datos->fetch_assoc()) {
-          echo "<pre>".var_dump($eventos)."</pre>";
+          $calendario[] = array(
+            'titulo' => $eventos['nombre_evento'],
+            'fecha' => $eventos['fecha_evento'],
+            'hora' => $eventos['hora_evento'],
+            'categoria' => $eventos['clave'],
+            'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado'],
+          );
         }
         ?>
+        <pre>
+        <?php var_dump($calendario);?>
+        </pre>
       </div>
     </section>
     <!--section-->
-
 <?php
   $conexion->close();
   include_once 'includes/templates/footer.php'
