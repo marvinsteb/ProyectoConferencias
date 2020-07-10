@@ -37,6 +37,13 @@
           );
         }
         ?>
+        <?php
+          //mostrando el calendario de eventos.
+          foreach ($calendario as $dia => $eventosDelDia) { ?>
+            <h3>
+              <i class="fa fa-calendar"> <?php echo $dia; ?> </i>
+            </h3>
+          <?php } ?>
         <pre>
         <?php var_dump($calendario);?>
         </pre>
