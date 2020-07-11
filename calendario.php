@@ -1,5 +1,7 @@
 <?php
   include_once 'includes/templates/header.php';
+  setlocale(LC_TIME, 'es_ES.UTF-8');
+  setlocale(LC_TIME,"spanish");
 ?>
     <section class="seccion contenedor">
       <h2>Calendario de Eventos</h2>
@@ -41,12 +43,18 @@
           //mostrando el calendario de eventos.
           foreach ($calendario as $dia => $eventosDelDia) { ?>
             <h3>
-              <i class="fa fa-calendar"> <?php echo $dia; ?> </i>
+              <i class="fa fa-calendar"> <?php echo strftime( "%A, %d de %B del %Y", strtotime($dia)); ?> </i>
             </h3>
+            <?php foreach ($eventosDelDia as $evento) { ?>
+              <div class="dia">
+              <p class="titulo"><?php echo $evento["titulo"];?></p>
+                <pre>
+                <?php var_dump($evento);?>
+                </pre>
+              </div>
+            <?php } ?>
           <?php } ?>
-        <pre>
-        <?php var_dump($calendario);?>
-        </pre>
+
       </div>
     </section>
     <!--section-->
