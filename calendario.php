@@ -8,16 +8,16 @@
       <?php try {
         require_once('includes/funciones/dbconexion.php');
         $sqlQuery = "SELECT
-                    ev.evento_id, 
-                    ev.nombre_evento, 
-                    ev.fecha_evento, 
-                    ev.hora_evento, 
-                    ev.clave, 
+                    ev.evento_id,
+                    ev.nombre_evento,
+                    ev.fecha_evento,
+                    ev.hora_evento,
+                    ev.clave,
                     cev.cat_evento,
-                    cev.icono, 
+                    cev.icono,
                     invi.nombre_invitado,
-                    invi.apellido_invitado 
-                    FROM  proyectoconferencias.evento ev 
+                    invi.apellido_invitado
+                    FROM  proyectoconferencias.evento ev
                     INNER JOIN invitado invi ON ev.id_invitado = invi.invitado_id
                     INNER JOIN categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
                     ORDER BY 1;";
@@ -45,8 +45,8 @@
           //mostrando el calendario de eventos.
           foreach ($calendario as $dia => $eventosDelDia) { ?>
             <h3>
-              <i class="fa fa-calendar"></i> 
-              <?php echo strftime( "%d de %B del %Y", strtotime($dia)); ?> 
+              <i class="fa fa-calendar"></i>
+              <?php echo strftime( "%d de %B del %Y", strtotime($dia)); ?>
             </h3>
             <?php foreach ($eventosDelDia as $evento) { ?>
               <div class="dia">
@@ -63,12 +63,12 @@
                   <i class="fa fa-user" aria-hidden="true"></i>
                 <?php echo $evento["invitado"]; ?>
                 </p>
-              </div>
-              <br>
-            <?php } ?>
-          <?php } ?>
+              </div>  
+            <?php } // end foreach eventosDelDia ?>
+          <?php } // end foreach calendario?>
 
       </div>
+      <!-- .calendario -->
     </section>
     <!--section-->
 <?php
