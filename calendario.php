@@ -43,15 +43,25 @@
           //mostrando el calendario de eventos.
           foreach ($calendario as $dia => $eventosDelDia) { ?>
             <h3>
-              <i class="fa fa-calendar"> <?php echo strftime( "%A, %d de %B del %Y", strtotime($dia)); ?> </i>
+              <i class="fa fa-calendar"></i> 
+              <?php echo strftime( "%d de %B del %Y", strtotime($dia)); ?> 
             </h3>
             <?php foreach ($eventosDelDia as $evento) { ?>
               <div class="dia">
-              <p class="titulo"><?php echo $evento["titulo"];?></p>
-                <pre>
-                <?php var_dump($evento);?>
-                </pre>
+                <p class="titulo"><?php echo $evento["titulo"];?></p>
+                <p class="hora">
+                  <i class="fa fa-clock" aria-hidden="true"></i>
+                  <?php echo $evento["fecha"] . $evento["hora"];?>
+                </p>
+                <p>
+                <?php echo $evento["categoria"]; ?>
+                </p>
+                <p>
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                <?php echo $evento["invitado"]; ?>
+                </p>
               </div>
+              <br>
             <?php } ?>
           <?php } ?>
 
