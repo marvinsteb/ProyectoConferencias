@@ -13,13 +13,14 @@
                     ev.fecha_evento, 
                     ev.hora_evento, 
                     ev.clave, 
-                    cev.cat_evento, 
+                    cev.cat_evento,
+                    cev.icono, 
                     invi.nombre_invitado,
                     invi.apellido_invitado 
                     FROM  proyectoconferencias.evento ev 
                     INNER JOIN invitado invi ON ev.id_invitado = invi.invitado_id
                     INNER JOIN categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                    ORDER BY 1";
+                    ORDER BY 1;";
        $datos = $conexion->query($sqlQuery);
       } catch (Exception $e) {
         echo $e->getMessage();
