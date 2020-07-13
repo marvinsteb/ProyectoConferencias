@@ -36,6 +36,7 @@
             'fecha' => $eventos['fecha_evento'],
             'hora' => $eventos['hora_evento'],
             'categoria' => $eventos['clave'],
+            'icono' => $eventos['icono'],
             'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado'],
           );
         }
@@ -55,6 +56,7 @@
                   <?php echo $evento["fecha"] . $evento["hora"];?>
                 </p>
                 <p>
+                  <i class="fa <?php echo $evento['icono']?>" aria-hidden="true"></i>
                 <?php echo $evento["categoria"]; ?>
                 </p>
                 <p>
