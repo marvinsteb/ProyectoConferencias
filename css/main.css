@@ -904,6 +904,13 @@ div.paquete .tabla-precio input {
 }
 
 /* calendario */
+div.calendario h3 {
+  background-color: #fe4918;
+  color: white;
+  clear: both;
+  text-align: center;
+  padding: 10px 0;
+}
 div.calendario::after {
   clear: both;
   display: block;
@@ -914,11 +921,13 @@ div.dia {
   float: left;
   border: 1px solid #e1e1e1;
   transition: all 0.3s ease;
+  height: 229px;
 }
 @media only screen and (min-width: 768px) {
   div.dia {
     width: 33.3%;
-    min-width: 240px;
+    min-width: 280px;
+    height: 250px;
     padding-top: 20px;
   }
 }
@@ -936,7 +945,7 @@ div.dia p {
 }
 div.dia i {
   color: #fe4918;
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 /* ========================================================================== Helper classes ========================================================================== */ /* * Hide visually and from screen readers */
 .hidden {
