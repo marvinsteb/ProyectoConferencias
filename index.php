@@ -22,6 +22,16 @@
             <div class="contenedor">
               <div class="programa-evento">
                 <h2>Programa del Evento</h2>
+                  <?php try {
+                  require_once('includes/funciones/dbconexion.php');
+                  $sqlQuery = "SELECT 
+                              *
+                              FROM categoria_evento cev;";
+                $datosEvento = $conexion->query($sqlQuery);
+                } catch (Exception $e) {
+                  echo $e->getMessage();
+                }?>
+
                 <nav class="menu-programa">
                   <a href="#talleres"><i class="fa fa-code"></i> Talleres</a>
                   <a href="#conferencias"
