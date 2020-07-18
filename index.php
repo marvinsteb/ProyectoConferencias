@@ -25,21 +25,24 @@
                   <?php try {
                   require_once('includes/funciones/dbconexion.php');
                   $sqlQuery = "SELECT 
-                              *
-                              FROM categoria_evento cev;";
-                $datosEvento = $conexion->query($sqlQuery);
+                               cev.id_categoria,
+                               cev.cat_evento,
+                               cev.icono 
+                               FROM categoria_evento cev;";
+                $datosCatEvento = $conexion->query($sqlQuery);
                 } catch (Exception $e) {
                   echo $e->getMessage();
                 }?>
 
                 <nav class="menu-programa">
-                  <a href="#talleres"><i class="fa fa-code"></i> Talleres</a>
-                  <a href="#conferencias"
-                    ><i class="fa fa-comment"></i> Conferencias</a
-                  >
-                  <a href="#seminarios"
-                    ><i class="fa fa-university"></i> Seminarios</a
-                  >
+                  <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
+                    <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> Talleres</a>
+                    <pre>
+                      <?php
+                      var_dump($categoriaEventos);
+                      ?>
+                    </pre>
+                  <?php } ?>
                 </nav>
                 <div id="talleres" class="info-curso ocultar clearfix">
                   <div class="detalle-evento">
