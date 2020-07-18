@@ -45,6 +45,30 @@
                   <?php } ?>
                 </nav>
                 <div id="talleres" class="info-curso ocultar clearfix">
+                <?php try {
+                require_once('includes/funciones/dbconexion.php');
+                $sqlQuery = "SELECT 
+                                ev.evento_id,
+                                ev.nombre_evento,
+                                ev.fecha_evento,
+                                ev.hora_evento,
+                                ev.clave,
+                                cev.cat_evento,
+                                cev.icono,
+                                invi.nombre_invitado,
+                                invi.apellido_invitado
+                            FROM
+                                proyectoconferencias.evento ev
+                                    INNER JOIN
+                                invitado invi ON ev.id_invitado = invi.invitado_id
+                                    INNER JOIN
+                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                AND ev.id_cat_evento = 1
+                            ORDER BY 1 LIMIT 2;";
+              $datosEventos = $conexion->query($sqlQuery);
+              } catch (Exception $e) {
+                echo $e->getMessage();
+              }?>
                   <div class="detalle-evento">
                     <h3>HTML5, CSS3 y JavaScript</h3>
                     <p><i class="fa fa-clock"></i> 16:00 hrs</p>
