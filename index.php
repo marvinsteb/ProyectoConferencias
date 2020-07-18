@@ -36,12 +36,7 @@
 
                 <nav class="menu-programa">
                   <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
-                    <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> Talleres</a>
-                    <pre>
-                      <?php
-                      var_dump($categoriaEventos);
-                      ?>
-                    </pre>
+                    <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
                   <?php } ?>
                 </nav>
                 <div id="talleres" class="info-curso ocultar clearfix">
