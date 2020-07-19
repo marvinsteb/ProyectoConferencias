@@ -24,11 +24,11 @@
       <h2>Nuestros Invitados</h2>
       <ul class="lista-invitados clearfix">
         <?php
-          while ($invitados = $datosInvitado->fetch_assoc()) { ?>
+          while ($invitado = $datosInvitado->fetch_assoc()) { ?>
             <li>
               <div class="invitado">
-                <img src="img/invitado1.jpg" alt="imagen invitado" />
-                <p>Nombre Invitado 1</p>
+                <img src="img/<?php echo $invitado["url_imagen"]; ?>" alt="imagen invitado" />
+                <p><?php echo $invitado["nombre_invitado"] . " " . $invitado["apellido_invitado"]; ?></p>
               </div>
             </li>
           <?php } ?>
