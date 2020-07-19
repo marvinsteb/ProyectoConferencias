@@ -39,8 +39,6 @@
                       <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
                     <?php } ?>
                   </nav>
-
-
                   <?php try {
                     require_once('includes/funciones/dbconexion.php');
                     $sqlQuery = "SELECT 
@@ -99,14 +97,15 @@
                                 ORDER BY 1 LIMIT 2;
                                 ";
                     $conexion->multi_query($sqlQuery);
-                    } catch (Exception $e) {
-                      echo $e->getMessage();
-                    }
-    
-                    do {
+                  } catch (Exception $e) {
+                    echo $e->getMessage();
+                  }
+                  
+                  do {
                       $datosEvento = $conexion->result();
-                      $row = $datosEvento->fetch_all(MSQLI_ASSOC); ?>
-                      <div id="talleres" class="info-curso ocultar clearfix">
+                      $row = $datosEvento->fetch_all(MSQLI_ASSOC); 
+                      foreach ($row as $evento) { ?>
+                      <div id="talleres" class="info-curso clearfix">
                       <div class="detalle-evento">
                         <h3>HTML5, CSS3 y JavaScript</h3>
                         <p><i class="fa fa-clock"></i> 16:00 hrs</p>
@@ -121,10 +120,11 @@
                       </div>
                       <a href="#" class="button float-right">Ver todos</a>
                     </div>
-                    <?php
+                    <?php 
+                      }
                     } while ($conexion->more_results() && $conexion->next_results());
                   ?>
-              </div>
+                  </div>
               <!--.programa-evento-->
             </div>
             <!--.contenedor-->
