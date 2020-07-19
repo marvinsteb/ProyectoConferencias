@@ -59,8 +59,45 @@
                                     INNER JOIN
                                 categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
                                 AND ev.id_cat_evento = 1
-                            ORDER BY 1 LIMIT 2;";
-              $datosEventos = $conexion->query($sqlQuery);
+                            ORDER BY 1 LIMIT 2;
+                            SELECT 
+                                ev.evento_id,
+                                ev.nombre_evento,
+                                ev.fecha_evento,
+                                ev.hora_evento,
+                                ev.clave,
+                                cev.cat_evento,
+                                cev.icono,
+                                invi.nombre_invitado,
+                                invi.apellido_invitado
+                            FROM
+                                proyectoconferencias.evento ev
+                                    INNER JOIN
+                                invitado invi ON ev.id_invitado = invi.invitado_id
+                                    INNER JOIN
+                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                AND ev.id_cat_evento = 2
+                            ORDER BY 1 LIMIT 2;
+                            SELECT 
+                                ev.evento_id,
+                                ev.nombre_evento,
+                                ev.fecha_evento,
+                                ev.hora_evento,
+                                ev.clave,
+                                cev.cat_evento,
+                                cev.icono,
+                                invi.nombre_invitado,
+                                invi.apellido_invitado
+                            FROM
+                                proyectoconferencias.evento ev
+                                    INNER JOIN
+                                invitado invi ON ev.id_invitado = invi.invitado_id
+                                    INNER JOIN
+                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                AND ev.id_cat_evento = 3
+                            ORDER BY 1 LIMIT 2;
+                            ";
+              $datosEventos = $conexion->multi_query($sqlQuery);
               } catch (Exception $e) {
                 echo $e->getMessage();
               }?>
