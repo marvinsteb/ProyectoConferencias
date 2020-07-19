@@ -21,134 +21,109 @@
           <div class="contenido-programa">
             <div class="contenedor">
               <div class="programa-evento">
-                <h2>Programa del Evento</h2>
+                  <h2>Programa del Evento</h2>
+                    <?php try {
+                    require_once('includes/funciones/dbconexion.php');
+                    $sqlQuery = "SELECT 
+                                cev.id_categoria,
+                                cev.cat_evento,
+                                cev.icono 
+                                FROM categoria_evento cev;";
+                  $datosCatEvento = $conexion->query($sqlQuery);
+                  } catch (Exception $e) {
+                    echo $e->getMessage();
+                  }?>
+
+                  <nav class="menu-programa">
+                    <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
+                      <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
+                    <?php } ?>
+                  </nav>
+
+
                   <?php try {
-                  require_once('includes/funciones/dbconexion.php');
-                  $sqlQuery = "SELECT 
-                               cev.id_categoria,
-                               cev.cat_evento,
-                               cev.icono 
-                               FROM categoria_evento cev;";
-                $datosCatEvento = $conexion->query($sqlQuery);
-                } catch (Exception $e) {
-                  echo $e->getMessage();
-                }?>
-
-                <nav class="menu-programa">
-                  <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
-                    <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
-                  <?php } ?>
-                </nav>
-                <div id="talleres" class="info-curso ocultar clearfix">
-                <?php try {
-                require_once('includes/funciones/dbconexion.php');
-                $sqlQuery = "SELECT 
-                                ev.evento_id,
-                                ev.nombre_evento,
-                                ev.fecha_evento,
-                                ev.hora_evento,
-                                ev.clave,
-                                cev.cat_evento,
-                                cev.icono,
-                                invi.nombre_invitado,
-                                invi.apellido_invitado
-                            FROM
-                                proyectoconferencias.evento ev
-                                    INNER JOIN
-                                invitado invi ON ev.id_invitado = invi.invitado_id
-                                    INNER JOIN
-                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                                AND ev.id_cat_evento = 1
-                            ORDER BY 1 LIMIT 2;
-                            SELECT 
-                                ev.evento_id,
-                                ev.nombre_evento,
-                                ev.fecha_evento,
-                                ev.hora_evento,
-                                ev.clave,
-                                cev.cat_evento,
-                                cev.icono,
-                                invi.nombre_invitado,
-                                invi.apellido_invitado
-                            FROM
-                                proyectoconferencias.evento ev
-                                    INNER JOIN
-                                invitado invi ON ev.id_invitado = invi.invitado_id
-                                    INNER JOIN
-                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                                AND ev.id_cat_evento = 2
-                            ORDER BY 1 LIMIT 2;
-                            SELECT 
-                                ev.evento_id,
-                                ev.nombre_evento,
-                                ev.fecha_evento,
-                                ev.hora_evento,
-                                ev.clave,
-                                cev.cat_evento,
-                                cev.icono,
-                                invi.nombre_invitado,
-                                invi.apellido_invitado
-                            FROM
-                                proyectoconferencias.evento ev
-                                    INNER JOIN
-                                invitado invi ON ev.id_invitado = invi.invitado_id
-                                    INNER JOIN
-                                categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                                AND ev.id_cat_evento = 3
-                            ORDER BY 1 LIMIT 2;
-                            ";
-              $datosEventos = $conexion->multi_query($sqlQuery);
-              } catch (Exception $e) {
-                echo $e->getMessage();
-              }?>
-                  <div class="detalle-evento">
-                    <h3>HTML5, CSS3 y JavaScript</h3>
-                    <p><i class="fa fa-clock"></i> 16:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <div class="detalle-evento">
-                    <h3>Responsive Web Desing</h3>
-                    <p><i class="fa fa-clock"></i> 20:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <a href="#" class="button float-right">Ver todos</a>
-                </div>
-                <!-- .talleres-->
-                <div id="conferencias" class="info-curso ocultar clearfix">
-                  <div class="detalle-evento">
-                    <h3>Conferencia 1</h3>
-                    <p><i class="fa fa-clock"></i> 16:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <div class="detalle-evento">
-                    <h3>Conferencia 2</h3>
-                    <p><i class="fa fa-clock"></i> 20:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <a href="#" class="button float-right">Ver todos</a>
-                </div>
-                <!-- .Conferencias-->
-
-                <div id="seminarios" class="info-curso ocultar clearfix">
-                  <div class="detalle-evento">
-                    <h3>Seminario 1</h3>
-                    <p><i class="fa fa-clock"></i> 16:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <div class="detalle-evento">
-                    <h3>Seminario 2</h3>
-                    <p><i class="fa fa-clock"></i> 20:00 hrs</p>
-                    <p><i class="fa fa-calendar"></i> 10 de Dic</p>
-                    <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
-                  </div>
-                  <a href="#" class="button float-right">Ver todos</a>
-                </div>
-                <!-- .Seminarios-->
+                    require_once('includes/funciones/dbconexion.php');
+                    $sqlQuery = "SELECT 
+                                    ev.evento_id,
+                                    ev.nombre_evento,
+                                    ev.fecha_evento,
+                                    ev.hora_evento,
+                                    ev.clave,
+                                    cev.cat_evento,
+                                    cev.icono,
+                                    invi.nombre_invitado,
+                                    invi.apellido_invitado
+                                FROM
+                                    proyectoconferencias.evento ev
+                                        INNER JOIN
+                                    invitado invi ON ev.id_invitado = invi.invitado_id
+                                        INNER JOIN
+                                    categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                    AND ev.id_cat_evento = 1
+                                ORDER BY 1 LIMIT 2;
+                                SELECT 
+                                    ev.evento_id,
+                                    ev.nombre_evento,
+                                    ev.fecha_evento,
+                                    ev.hora_evento,
+                                    ev.clave,
+                                    cev.cat_evento,
+                                    cev.icono,
+                                    invi.nombre_invitado,
+                                    invi.apellido_invitado
+                                FROM
+                                    proyectoconferencias.evento ev
+                                        INNER JOIN
+                                    invitado invi ON ev.id_invitado = invi.invitado_id
+                                        INNER JOIN
+                                    categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                    AND ev.id_cat_evento = 2
+                                ORDER BY 1 LIMIT 2;
+                                SELECT 
+                                    ev.evento_id,
+                                    ev.nombre_evento,
+                                    ev.fecha_evento,
+                                    ev.hora_evento,
+                                    ev.clave,
+                                    cev.cat_evento,
+                                    cev.icono,
+                                    invi.nombre_invitado,
+                                    invi.apellido_invitado
+                                FROM
+                                    proyectoconferencias.evento ev
+                                        INNER JOIN
+                                    invitado invi ON ev.id_invitado = invi.invitado_id
+                                        INNER JOIN
+                                    categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
+                                    AND ev.id_cat_evento = 3
+                                ORDER BY 1 LIMIT 2;
+                                ";
+                    $conexion->multi_query($sqlQuery);
+                    } catch (Exception $e) {
+                      echo $e->getMessage();
+                    }
+    
+                    do {
+                      $datosEvento = $conexion->result();
+                      $row = $datosEvento->fetch_all(MSQLI_ASSOC); ?>
+                      <div id="talleres" class="info-curso ocultar clearfix">
+                      <div class="detalle-evento">
+                        <h3>HTML5, CSS3 y JavaScript</h3>
+                        <p><i class="fa fa-clock"></i> 16:00 hrs</p>
+                        <p><i class="fa fa-calendar"></i> 10 de Dic</p>
+                        <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
+                      </div>
+                      <div class="detalle-evento">
+                        <h3>Responsive Web Desing</h3>
+                        <p><i class="fa fa-clock"></i> 20:00 hrs</p>
+                        <p><i class="fa fa-calendar"></i> 10 de Dic</p>
+                        <p><i class="fa fa-user"></i> Nombre del Conferencista</p>
+                      </div>
+                      <a href="#" class="button float-right">Ver todos</a>
+                    </div>
+                    <?php
+                    } while ($conexion->more_results() && $conexion->next_results());
+                  ?>
               </div>
               <!--.programa-evento-->
             </div>
