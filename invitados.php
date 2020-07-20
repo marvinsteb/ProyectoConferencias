@@ -31,6 +31,11 @@
                 <p><?php echo $invitado["nombre_invitado"] . " " . $invitado["apellido_invitado"]; ?></p>
               </div>
             </li>
+            <div style='display:none'>
+              <div class="invitado_info" id="invitado<?php echo $invitado["invitado_id"]?>">
+                <p><?php echo $invitado["descripcion"];?></p>
+              </div>
+            </div>
           <?php } ?>
         </ul>
       </div>

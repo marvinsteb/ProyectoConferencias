@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/all.css" />
     <link rel="stylesheet" href="css/lightbox.css" />
+    <link rel="stylesheet" href="css/colorbox.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap"
       rel="stylesheet"
