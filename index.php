@@ -327,5 +327,6 @@
         </div>
       </section>
 <?php
+  $conexion->close();
   include_once 'includes/templates/footer.php'
 ?>
