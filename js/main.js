@@ -205,5 +205,7 @@
         $("#segundos").html(event.strftime("%S"));
       });
     }
+    // colorbox
+    $(".invitado_info").colorbox({ inline: true, width: "50%" });
   }); // dom content loaded
 })();
