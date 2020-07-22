@@ -947,6 +947,11 @@ div.dia i {
   color: #fe4918;
   font-size: 1.6em;
 }
+/*  colorbox */
+div.cboxElement {
+  padding: 30px !important;
+  text-align: center;
+}
 /* ========================================================================== Helper classes ========================================================================== */ /* * Hide visually and from screen readers */
 .hidden {
   display: none !important;
