@@ -3,8 +3,6 @@
   setlocale(LC_TIME, 'es_ES.UTF-8');
   setlocale(LC_TIME,"spanish");
 ?>
-    <section class="seccion contenedor">
-      <h2>Invitados</h2>
       <?php try {
         require_once('includes/funciones/dbconexion.php');
         $sqlQuery = "SELECT 
