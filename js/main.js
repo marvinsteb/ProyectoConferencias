@@ -206,6 +206,8 @@
       });
     }
     // colorbox
-    $(".invitado_info").colorbox({ inline: true, width: "50%" });
+    if ($(".invitado_info").length > 0) {
+      $(".invitado_info").colorbox({ inline: true, width: "50%" });
+    }
   }); // dom content loaded
 })();
