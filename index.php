@@ -37,9 +37,7 @@
                   <nav class="menu-programa">
                     <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
                       <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
-                    <?php }
-                      $conexion->close();
-                     ?>
+                    <?php } ?>
                    </nav>
 
             <?php 
@@ -108,20 +106,22 @@
                     <?php                   
                       do {
                         $datosEvento = $conexion->store_result();
-                        $fila = $datosEvento->fetch_array(MYSQLI_ASSOC); ?> 
+                        $fila = $datosEvento->fetch_all(MYSQLI_ASSOC); ?>
                         <?php $i = 0;?>
-                        <? foreach($fila as $evento ) { ?>
-                        <?php if($i % 2 == 0) { ?>
-                          <div id="<?php echo strtolower($evento['cat_evento'])?>" class="info-curso clearfix">
-                        <? } ?>
-                            <div class="detalle-evento">
-                              <h3><php echo utf8_decode($evento['nombre_evento'])></h3>
-                              <p><i class="fa fa-clock"></i> <?php echo $evento['hora_evento']; ?> </p>
-                              <p><i class="fa fa-calendar"></i> <?php echo $evento['fecha_evento']; ?> </p>
-                              <p><i class="fa fa-user"></i> <?php echo $evento['nombre_invitado']; ?> </p>
-                            </div>
-                            <a href="#" class="button float-right">Ver todos</a>
-                          </div>
+                        <?php foreach($fila as $evento ) { ?>
+                          <?php if($i % 2 == 0) { ?>
+                              <div id="talleres" class="info-curso clearfix">
+                          <?php } ?>
+                                <div class="detalle-evento">
+                                  <h3> <?php echo utf8_decode($evento['nombre_evento']); ?></h3>
+                                  <p><i class="fa fa-clock"></i> <?php echo $evento['hora_evento']; ?> </p>
+                                  <p><i class="fa fa-calendar"></i> <?php echo $evento['fecha_evento']; ?> </p>
+                                  <p><i class="fa fa-user"></i> <?php echo $evento['nombre_invitado']; ?> </p>
+                                </div>
+                                <a href="#" class="button float-right">Ver todos</a>
+                          <?php if($i % 2 == 0) { ?>
+                              </div>
+                          <?php } ?>
                           <?php $i++;?>
                         <?php } ?>
                       <?php } while ( $conexion->more_results() & $conexion->next_result()); ?>
