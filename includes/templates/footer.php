@@ -60,6 +60,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/jquery.animateNumber.js"></script>
     <script src="js/countdown.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
     <?php
       $archivo = basename($_SERVER['PHP_SELF']);
       $pagina = str_replace(".php", "", $archivo);
