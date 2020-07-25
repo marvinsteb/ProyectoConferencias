@@ -36,7 +36,7 @@
 
                   <nav class="menu-programa">
                     <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
-                      <a href="#<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
+                      <a href="#<?php echo strtolower($categoriaEventos['cat_evento']); ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
                     <?php } ?>
                    </nav>
 
@@ -124,6 +124,7 @@
                           <?php } ?>
                           <?php $i++;?>
                         <?php } ?>
+                        <?php $datosCatEvento->free();?>
                       <?php } while ( $conexion->more_results() & $conexion->next_result()); ?>
                   </div>
               <!--.programa-evento-->
