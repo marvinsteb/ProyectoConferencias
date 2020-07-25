@@ -119,7 +119,7 @@
                                   <p><i class="fa fa-user"></i> <?php echo $evento['nombre_invitado']; ?> </p>
                                 </div>
                           <?php if($i % 2 == 1) { ?>
-                                <a href="#" class="button float-right">Ver todos</a>
+                                <a href="calendario.php" class="button float-right">Ver todos</a>
                               </div>
                           <?php } ?>
                           <?php $i++;?>
