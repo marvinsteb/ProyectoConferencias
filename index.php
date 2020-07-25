@@ -110,7 +110,7 @@
                         <?php $i = 0;?>
                         <?php foreach($fila as $evento ) { ?>
                           <?php if($i % 2 == 0) { ?>
-                              <div id="talleres" class="info-curso clearfix">
+                              <div id="<?php echo strtolower($evento['cat_evento']);?>" class="info-curso ocultar clearfix">
                           <?php } ?>
                                 <div class="detalle-evento">
                                   <h3> <?php echo utf8_decode($evento['nombre_evento']); ?></h3>
@@ -118,8 +118,8 @@
                                   <p><i class="fa fa-calendar"></i> <?php echo $evento['fecha_evento']; ?> </p>
                                   <p><i class="fa fa-user"></i> <?php echo $evento['nombre_invitado']; ?> </p>
                                 </div>
+                          <?php if($i % 2 == 1) { ?>
                                 <a href="#" class="button float-right">Ver todos</a>
-                          <?php if($i % 2 == 0) { ?>
                               </div>
                           <?php } ?>
                           <?php $i++;?>
