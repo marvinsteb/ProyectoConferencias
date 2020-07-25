@@ -28,7 +28,7 @@
                                 cev.id_categoria,
                                 cev.cat_evento,
                                 cev.icono 
-                                FROM categoria_evento cev;";
+                                FROM categoria_evento cev order by 1 desc;";
                   $datosCatEvento = $conexion->query($sqlQuery);
                   } catch (Exception $e) {
                     echo $e->getMessage();
@@ -36,7 +36,7 @@
 
                   <nav class="menu-programa">
                     <?php while ($categoriaEventos = $datosCatEvento->fetch_assoc()) { ?>
-                      <a href="<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
+                      <a href="#<?php echo $categoriaEventos['cat_evento']; ?>"><i class="fa <?php echo $categoriaEventos['icono']; ?>"></i> <?php echo $categoriaEventos['cat_evento']; ?></a>
                     <?php } ?>
                    </nav>
 
@@ -59,7 +59,7 @@
                                       invitado invi ON ev.id_invitado = invi.invitado_id
                                           INNER JOIN
                                       categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                                      AND ev.id_cat_evento = 1
+                                      AND ev.id_cat_evento = 3
                                   ORDER BY 1 LIMIT 2;
                                   SELECT 
                                       ev.evento_id,
@@ -95,7 +95,7 @@
                                       invitado invi ON ev.id_invitado = invi.invitado_id
                                           INNER JOIN
                                       categoria_evento cev ON ev.id_cat_evento = cev.id_categoria
-                                      AND ev.id_cat_evento = 3
+                                      AND ev.id_cat_evento = 1
                                   ORDER BY 1 LIMIT 2;
                                   ";
                     $conexion->multi_query($sqlQuery);
