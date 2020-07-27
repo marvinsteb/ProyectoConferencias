@@ -51,6 +51,7 @@
                     type="number"
                     min="0"
                     id="pase_dia"
+                    name="boletos[]"
                     size="3"
                     placeholder="0"
                   />
@@ -73,6 +74,7 @@
                     type="number"
                     min="0"
                     id="pase_completo"
+                    name="boletos[]"
                     size="3"
                     placeholder="0"
                   />
@@ -93,6 +95,7 @@
                   <label for="pase_dosdias">Boletos deseados:</label>
                   <input
                     type="number"
+                    name="boletos[]"
                     min="0"
                     id="pase_dosdias"
                     size="3"
@@ -407,6 +410,7 @@
 
                 <input
                   type="number"
+                  name="pedido_camisas"
                   min="0"
                   id="camisa_evento"
                   size="3"
@@ -421,6 +425,7 @@
                 >
                 <input
                   type="number"
+                  name="pedido_etiquetas"
                   min="0"
                   id="etiquetas"
                   size="3"
@@ -432,9 +437,9 @@
                 <label for="regalo">Sleccione un regalo</label> <br />
                 <select name="regalo" id="regalo" required>
                   <option value="">-Seleccione un regalo-</option>
-                  <option value="ETI">Etiquetas</option>
-                  <option value="PUL">Pulceras</option>
-                  <option value="PLU">Plumas</option>
+                  <option value="2">Etiquetas</option>
+                  <option value="1">Pulceras</option>
+                  <option value="3">Plumas</option>
                 </select>
               </div>
               <!-- .orden -->
@@ -454,6 +459,7 @@
               <input
                 id="btnRegistro"
                 type="submit"
+                name="submit"
                 class="button"
                 value="Pagar"
               />
