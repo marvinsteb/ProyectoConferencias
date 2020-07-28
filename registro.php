@@ -443,6 +443,7 @@
                 </select>
               </div>
               <!-- .orden -->
+              <input type="hidden" name="total_pedido" id="total_pedido">
               <input
                 type="button"
                 id="calcular"

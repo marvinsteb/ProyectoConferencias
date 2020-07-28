@@ -57,6 +57,8 @@
       var etiquetas = document.getElementById("etiquetas");
       var camisas = document.getElementById("camisa_evento");
 
+      botonRegistro.disabled = true;
+
       function validarCampos() {
         if (this.value === "") {
           errorDiv.style.display = "block";
@@ -149,6 +151,8 @@
           alert("Debes elegir un regalo");
           regalo.focus();
         }
+        botonRegistro.disabled = false;
+        document.getElementById("total_pedido").value = totalPagar;
       });
     }
     //menu programa del evento
