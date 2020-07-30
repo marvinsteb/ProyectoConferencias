@@ -8,11 +8,17 @@
     $regalo = $_POST['regalo']; 
     $total = $_POST['total_pedido']; 
     $fecha = date('Y-m-d H:i:s'); 
+
+    // pedido 
+    $boletos = $_POST['boletos'];
+    $camisa = $_POST['pedido_camisas'];
+    $etiquetas = $_POST['pedido_etiquetas'];
+    include_once 'includes/funciones/funciones.php';
+    $pedido =  productos_jason($boletos,$camisa,$etiquetas);
+    echo $pedido;
      ?>
   <pre>
     <?php var_dump($_POST);
-    echo $nombre;
-    echo $apellido; 
     ?>
   </pre>
   <?php } ?>
