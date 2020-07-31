@@ -1,5 +1,5 @@
 <?php 
-  function productos_jason(&$boletos,&$casmisas = 0, &$etiquetas =0 ){
+  function productos_jason(&$boletos,&$camisas = 0, &$etiquetas =0 ){
     $dias = array( 0 => 'un_dia',1 => 'pase_completo',2=>'pase_2Dias' );
     $total_boletos = array_combine($dias,$boletos);
     $json = array();
@@ -8,6 +8,17 @@
         $json[$llave] = (int) $boletos; 
       endif;
     endforeach;
+
+    $camisas = (int) $camisas;
+    if($camisas > 0):
+      $json['camisas'] = $camisas;
+    endif;
+
+    $etiquetas = (int) $etiquetas;
+    if($etiquetas > 0):
+      $json['etiquetas'] = $etiquetas;
+    endif;
+
     return json_encode($json);
   }
 ?>
