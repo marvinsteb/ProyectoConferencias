@@ -21,4 +21,12 @@
 
     return json_encode($json);
   }
+
+  function eventos_json(&$eventos){
+    $eventos_json = array();
+    foreach ($eventos as $evento) {
+      $eventos_json['evento'] [] = $evento;
+    }
+    return json_encode($eventos_json);
+  }
 ?>

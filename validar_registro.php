@@ -15,10 +15,13 @@
     $etiquetas = $_POST['pedido_etiquetas'];
     include_once 'includes/funciones/funciones.php';
     $pedido =  productos_jason($boletos,$camisa,$etiquetas);
-    echo $pedido;
+
+    //eventos
+    $eventos = $_POST['registro'];
+    $registros = eventos_json($eventos);
      ?>
   <pre>
-    <?php var_dump($_POST);
+    <?php var_dump($registros);
     ?>
   </pre>
   <?php } ?>
