@@ -19,11 +19,24 @@
     //eventos
     $eventos = $_POST['registro'];
     $registros = eventos_json($eventos);
+    try {
+      require_once('includes/funciones/dbconexion.php');
+      $stmt = $conexion.prepare("INSERT INTO `proyectoconferencias`.`registrados`
+                                  (`nombre`,
+                                  `apellido`,
+                                  `email`,
+                                  `fecha_registro`,
+                                  `pases_articulos`,
+                                  `talleres_registrados`,
+                                  `regalo`,
+                                  `total_pagado`)
+                                  VALUES
+                                  (?,?,?,?,?,?,?,?;");
+      $stmt->bind_param("ssssssis",$nombre,$apellido,$email,$fecha,$pedido,$registros,$regalo,$total);
+    } catch (Exception $e) {
+      $error = $e->getMessage();
+    }
      ?>
-  <pre>
-    <?php var_dump($registros);
-    ?>
-  </pre>
   <?php } ?>
 </section>
 <?php include_once 'includes/templates/footer.php'?>
