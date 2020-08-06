@@ -21,7 +21,7 @@
     $registros = eventos_json($eventos);
     try {
       require_once('includes/funciones/dbconexion.php');
-      $stmt = $conexion.prepare("INSERT INTO `proyectoconferencias`.`registrados`
+      $stmt = $conexion->prepare("INSERT INTO `proyectoconferencias`.`registrado`
                                   (`nombre`,
                                   `apellido`,
                                   `email`,
@@ -31,10 +31,14 @@
                                   `regalo`,
                                   `total_pagado`)
                                   VALUES
-                                  (?,?,?,?,?,?,?,?;");
+                                  (?,?,?,?,?,?,?,?);");
       $stmt->bind_param("ssssssis",$nombre,$apellido,$email,$fecha,$pedido,$registros,$regalo,$total);
+      $stmt->execute();
+      $stmt->close();
+      $conexion->close();
     } catch (Exception $e) {
       $error = $e->getMessage();
+      echo $error;
     }
      ?>
   <?php } ?>
